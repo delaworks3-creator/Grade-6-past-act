@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English is Fun with Mem Dela</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #e8f5e9;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+h2 {
+  color: #388e3c;
+}
+
+.text {
+  background: #f1f8e9;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.question {
+  text-align: left;
+  margin-top: 25px;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 15px;
+}
+
+button {
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #2e7d32;
+}
+
+input {
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}
+
+#result {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌸 English is Fun with Mem Dela 🌸</h1>
+<h2>Kelas 6 — SD Negeri 71 Maluku Tengah</h2>
+
+<h2>📖 Past Activities</h2>
+
+<div class="text">
+<strong>My Sunday</strong><br><br>
+
+Last Sunday, I woke up at seven o’clock.
+I helped my mother in the kitchen.
+Then, I cleaned my bedroom.
+In the afternoon, I played badminton with my friends.
+We were very happy.
+At night, I watched a movie with my family.
+</div>
+
+<div id="quiz"></div>
+
+<button onclick="checkAnswers()">🎯 Check My Answers</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+type: "mc",
+question: "1. When did the writer wake up?",
+options: [
+"At six o’clock",
+"At seven o’clock",
+"At eight o’clock",
+"At nine o’clock"
+],
+answer: "At seven o’clock"
+},
+
+{
+type: "mc",
+question: "2. Who did the writer help?",
+options: [
+"His teacher",
+"His father",
+"His mother",
+"His friend"
+],
+answer: "His mother"
+},
+
+{
+type: "mc",
+question: "3. What did the writer clean?",
+options: [
+"The kitchen",
+"The classroom",
+"The garden",
+"The bedroom"
+],
+answer: "The bedroom"
+},
+
+{
+type: "mc",
+question: "4. What did the writer do in the afternoon?",
+options: [
+"Played badminton",
+"Watched a movie",
+"Cooked dinner",
+"Read a book"
+],
+answer: "Played badminton"
+},
+
+{
+type: "mc",
+question: "5. Who watched a movie with the writer?",
+options: [
+"His friends",
+"His teacher",
+"His family",
+"His neighbors"
+],
+answer: "His family"
+},
+
+{
+type: "fill",
+question: "6. Last Sunday, I ______ up at seven o’clock.",
+answer: "woke"
+},
+
+{
+type: "fill",
+question: "7. I ______ my mother in the kitchen.",
+answer: "helped"
+},
+
+{
+type: "fill",
+question: "8. I ______ my bedroom.",
+answer: "cleaned"
+},
+
+{
+type: "fill",
+question: "9. I ______ badminton with my friends.",
+answer: "played"
+},
+
+{
+type: "fill",
+question: "10. At night, I ______ a movie with my family.",
+answer: "watched"
+}
+
+];
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q, index) => {
+
+let html = `
+<div class="question">
+<strong>${q.question}</strong><br><br>
+`;
+
+if(q.type === "mc") {
+
+q.options.forEach(option => {
+html += `
+<label>
+<input type="radio" name="q${index}" value="${option}">
+${option}
+</label><br>
+`;
+});
+
+} else {
+
+html += `
+<input type="text" id="q${index}" placeholder="Type your answer here">
+`;
+
+}
+
+html += `</div>`;
+
+quiz.innerHTML += html;
+
+});
+
+function checkAnswers() {
+
+let score = 0;
+
+questions.forEach((q, index) => {
+
+if(q.type === "mc") {
+
+const selected = document.querySelector(
+`input[name="q${index}"]:checked`
+);
+
+if(selected && selected.value === q.answer) {
+score++;
+}
+
+} else {
+
+const input = document.getElementById(`q${index}`);
+
+if(input.value.trim().toLowerCase() === q.answer.toLowerCase()) {
+score++;
+}
+
+}
+
+});
+
+document.getElementById("result").innerHTML =
+`🎉 Your Score: ${score} / 10`;
+
+}
+
+</script>
+
+</body>
+</html>

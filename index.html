@@ -223,10 +223,10 @@ if(q.type === "mc") {
 
 q.options.forEach(option => {
 html += `
-<label>
+<label class="option">
 <input type="radio" name="q${index}" value="${option}">
 ${option}
-</label><br>
+</label>
 `;
 });
 

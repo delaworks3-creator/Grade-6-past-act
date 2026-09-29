@@ -1,111 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>English is Fun with Mem Dela</title>
 
 <style>
+
 body {
-  font-family: Arial, sans-serif;
-  background: #e8f5e9;
-  text-align: center;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #e8f5e9;
+    margin: 0;
+    padding: 15px;
 }
 
 .container {
-  max-width: 700px;
-  margin: auto;
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 h1 {
-  color: #2e7d32;
+    text-align: center;
+    color: #2e7d32;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.school {
+    text-align: center;
+    color: #388e3c;
+    font-size: 19px;
+    font-weight: bold;
 }
 
 h2 {
-  color: #388e3c;
+    text-align: center;
+    color: #388e3c;
 }
 
-.text {
-  background: #f1f8e9;
-  padding: 15px;
-  border-radius: 15px;
-  text-align: left;
-  line-height: 1.6;
+.story {
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 18px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
 .question {
-  text-align: left;
-  margin-top: 25px;
-  padding: 15px;
-  background: #fafafa;
-  border-radius: 15px;
+    background: #fafafa;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+}
+
+.question-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    margin: 8px 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 17px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.choice:hover {
+    background: #e8f5e9;
+}
+
+.choice input {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.answer {
+    width: 90%;
+    padding: 12px;
+    font-size: 17px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
 }
 
 button {
-  background: #43a047;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  margin: 8px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
+    display: block;
+    margin: 25px auto;
+    padding: 14px 25px;
+    background: #43a047;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
-  background: #2e7d32;
-}
-
-input {
-  padding: 10px;
-  width: 90%;
-  border-radius: 8px;
-  border: 1px solid #aaa;
-}
-
-.correct {
-  color: green;
-  font-weight: bold;
-}
-
-.wrong {
-  color: red;
-  font-weight: bold;
+    background: #2e7d32;
 }
 
 #result {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 25px;
-}
-  .option {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: left;
-  padding: 12px;
-  margin: 8px 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  cursor: pointer;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
 }
 
-.option input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  flex-shrink: 0;
+.good {
+    background: #e8f5e9;
+    color: #2e7d32;
 }
+
+.try {
+    background: #fff3e0;
+    color: #e65100;
+}
+
 </style>
+
 </head>
 
 <body>
@@ -113,12 +147,19 @@ input {
 <div class="container">
 
 <h1>🌸 English is Fun with Mem Dela 🌸</h1>
-<h2>Kelas 6 — SD Negeri 71 Maluku Tengah</h2>
+
+<div class="school">
+Kelas 6 — SD Negeri 71 Maluku Tengah
+</div>
 
 <h2>📖 Past Activities</h2>
 
-<div class="text">
-<strong>My Sunday</strong><br><br>
+
+<div class="story">
+
+<strong>My Sunday</strong>
+
+<br><br>
 
 Last Sunday, I woke up at seven o’clock.
 I helped my mother in the kitchen.
@@ -126,176 +167,409 @@ Then, I cleaned my bedroom.
 In the afternoon, I played badminton with my friends.
 We were very happy.
 At night, I watched a movie with my family.
+
 </div>
 
-<div id="quiz"></div>
 
-<button onclick="checkAnswers()">🎯 Check My Answers</button>
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<div class="question-title">
+1. When did the writer wake up?
+</div>
+
+<label class="choice">
+<input type="radio" name="q1" value="wrong">
+<span>At six o’clock</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q1" value="correct">
+<span>At seven o’clock</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q1" value="wrong">
+<span>At eight o’clock</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q1" value="wrong">
+<span>At nine o’clock</span>
+</label>
+
+</div>
+
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<div class="question-title">
+2. Who did the writer help?
+</div>
+
+<label class="choice">
+<input type="radio" name="q2" value="wrong">
+<span>His teacher</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q2" value="wrong">
+<span>His father</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q2" value="correct">
+<span>His mother</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q2" value="wrong">
+<span>His friend</span>
+</label>
+
+</div>
+
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<div class="question-title">
+3. What did the writer clean?
+</div>
+
+<label class="choice">
+<input type="radio" name="q3" value="wrong">
+<span>The kitchen</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q3" value="wrong">
+<span>The classroom</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q3" value="wrong">
+<span>The garden</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q3" value="correct">
+<span>The bedroom</span>
+</label>
+
+</div>
+
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+
+<div class="question-title">
+4. What did the writer do in the afternoon?
+</div>
+
+<label class="choice">
+<input type="radio" name="q4" value="correct">
+<span>Played badminton</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q4" value="wrong">
+<span>Watched a movie</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q4" value="wrong">
+<span>Cooked dinner</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q4" value="wrong">
+<span>Read a book</span>
+</label>
+
+</div>
+
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+
+<div class="question-title">
+5. Who watched a movie with the writer?
+</div>
+
+<label class="choice">
+<input type="radio" name="q5" value="wrong">
+<span>His friends</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q5" value="wrong">
+<span>His teacher</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q5" value="correct">
+<span>His family</span>
+</label>
+
+<label class="choice">
+<input type="radio" name="q5" value="wrong">
+<span>His neighbors</span>
+</label>
+
+</div>
+
+
+<h2>✏️ Fill in the Blanks</h2>
+
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+
+<div class="question-title">
+6. Last Sunday, I ______ up at seven o’clock.
+</div>
+
+<input class="answer" id="q6" type="text" placeholder="Type your answer">
+
+</div>
+
+
+<!-- QUESTION 7 -->
+
+<div class="question">
+
+<div class="question-title">
+7. I ______ my mother in the kitchen.
+</div>
+
+<input class="answer" id="q7" type="text" placeholder="Type your answer">
+
+</div>
+
+
+<!-- QUESTION 8 -->
+
+<div class="question">
+
+<div class="question-title">
+8. I ______ my bedroom.
+</div>
+
+<input class="answer" id="q8" type="text" placeholder="Type your answer">
+
+</div>
+
+
+<!-- QUESTION 9 -->
+
+<div class="question">
+
+<div class="question-title">
+9. I ______ badminton with my friends.
+</div>
+
+<input class="answer" id="q9" type="text" placeholder="Type your answer">
+
+</div>
+
+
+<!-- QUESTION 10 -->
+
+<div class="question">
+
+<div class="question-title">
+10. At night, I ______ a movie with my family.
+</div>
+
+<input class="answer" id="q10" type="text" placeholder="Type your answer">
+
+</div>
+
+
+<button onclick="checkAnswers()">
+🎯 Check My Answers
+</button>
 
 <div id="result"></div>
 
+<button onclick="location.reload()">
+🔄 Play Again
+</button>
+
 </div>
+
 
 <script>
 
-const questions = [
+/* ENGLISH VOICE */
 
-{
-type: "mc",
-question: "1. When did the writer wake up?",
-options: [
-"At six o’clock",
-"At seven o’clock",
-"At eight o’clock",
-"At nine o’clock"
-],
-answer: "At seven o’clock"
-},
+function speak(text) {
 
-{
-type: "mc",
-question: "2. Who did the writer help?",
-options: [
-"His teacher",
-"His father",
-"His mother",
-"His friend"
-],
-answer: "His mother"
-},
+    if ("speechSynthesis" in window) {
 
-{
-type: "mc",
-question: "3. What did the writer clean?",
-options: [
-"The kitchen",
-"The classroom",
-"The garden",
-"The bedroom"
-],
-answer: "The bedroom"
-},
+        let voice = new SpeechSynthesisUtterance(text);
 
-{
-type: "mc",
-question: "4. What did the writer do in the afternoon?",
-options: [
-"Played badminton",
-"Watched a movie",
-"Cooked dinner",
-"Read a book"
-],
-answer: "Played badminton"
-},
+        voice.lang = "en-US";
+        voice.rate = 0.9;
+        voice.pitch = 1;
 
-{
-type: "mc",
-question: "5. Who watched a movie with the writer?",
-options: [
-"His friends",
-"His teacher",
-"His family",
-"His neighbors"
-],
-answer: "His family"
-},
+        speechSynthesis.cancel();
+        speechSynthesis.speak(voice);
 
-{
-type: "fill",
-question: "6. Last Sunday, I ______ up at seven o’clock.",
-answer: "woke"
-},
-
-{
-type: "fill",
-question: "7. I ______ my mother in the kitchen.",
-answer: "helped"
-},
-
-{
-type: "fill",
-question: "8. I ______ my bedroom.",
-answer: "cleaned"
-},
-
-{
-type: "fill",
-question: "9. I ______ badminton with my friends.",
-answer: "played"
-},
-
-{
-type: "fill",
-question: "10. At night, I ______ a movie with my family.",
-answer: "watched"
-}
-
-];
-
-const quiz = document.getElementById("quiz");
-
-questions.forEach((q, index) => {
-
-let html = `
-<div class="question">
-<strong>${q.question}</strong><br><br>
-`;
-
-if(q.type === "mc") {
-
-q.options.forEach(option => {
-html += `
-<label class="option">
-<input type="radio" name="q${index}" value="${option}">
-${option}
-</label>
-`;
-});
-
-} else {
-
-html += `
-<input type="text" id="q${index}" placeholder="Type your answer here">
-`;
+    }
 
 }
 
-html += `</div>`;
 
-quiz.innerHTML += html;
+/* CLAP SOUND */
 
-});
+function clap() {
+
+    let audio = new (window.AudioContext || window.webkitAudioContext)();
+
+    for (let i = 0; i < 4; i++) {
+
+        let oscillator = audio.createOscillator();
+        let gain = audio.createGain();
+
+        oscillator.frequency.value = 300 + Math.random() * 500;
+
+        gain.gain.setValueAtTime(
+            0.15,
+            audio.currentTime + i * 0.12
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            audio.currentTime + i * 0.12 + 0.08
+        );
+
+        oscillator.connect(gain);
+        gain.connect(audio.destination);
+
+        oscillator.start(audio.currentTime + i * 0.12);
+
+        oscillator.stop(
+            audio.currentTime + i * 0.12 + 0.08
+        );
+
+    }
+
+}
+
+
+/* CHECK ANSWERS */
 
 function checkAnswers() {
 
-let score = 0;
+    let score = 0;
 
-questions.forEach((q, index) => {
 
-if(q.type === "mc") {
+    /* MULTIPLE CHOICE */
 
-const selected = document.querySelector(
-`input[name="q${index}"]:checked`
-);
+    for (let i = 1; i <= 5; i++) {
 
-if(selected && selected.value === q.answer) {
-score++;
-}
+        let selected =
+            document.querySelector(
+                'input[name="q' + i + '"]:checked'
+            );
 
-} else {
+        if (selected && selected.value === "correct") {
 
-const input = document.getElementById(`q${index}`);
+            score++;
 
-if(input.value.trim().toLowerCase() === q.answer.toLowerCase()) {
-score++;
-}
+        }
 
-}
+    }
 
-});
 
-document.getElementById("result").innerHTML =
-`🎉 Your Score: ${score} / 10`;
+    /* FILL IN THE BLANKS */
+
+    let answers = {
+
+        q6: "woke",
+        q7: "helped",
+        q8: "cleaned",
+        q9: "played",
+        q10: "watched"
+
+    };
+
+
+    for (let id in answers) {
+
+        let userAnswer =
+            document.getElementById(id)
+            .value
+            .trim()
+            .toLowerCase();
+
+        if (userAnswer === answers[id]) {
+
+            score++;
+
+        }
+
+    }
+
+
+    /* RESULT */
+
+    let result = document.getElementById("result");
+
+    if (score === 10) {
+
+        result.className = "good";
+
+        result.innerHTML =
+        "🏆 PERFECT! 10 / 10!<br>🌟 WELL DONE! 🌟";
+
+        speak("Well done! Perfect!");
+        clap();
+
+    }
+
+    else if (score >= 8) {
+
+        result.className = "good";
+
+        result.innerHTML =
+        "🎉 Excellent! " + score + " / 10<br>👏 GOOD JOB!";
+
+        speak("Good job!");
+        clap();
+
+    }
+
+    else if (score >= 6) {
+
+        result.className = "good";
+
+        result.innerHTML =
+        "😊 Good job! " + score + " / 10<br>Keep learning!";
+
+        speak("Good job! Keep learning!");
+
+    }
+
+    else {
+
+        result.className = "try";
+
+        result.innerHTML =
+        "💪 Your Score: " + score + " / 10<br>Try again!";
+
+        speak("Try again!");
+
+    }
 
 }
 
